@@ -46,6 +46,7 @@ h1{
     align-items: center;
     justify-content: center;
     position: relative;
+    
 }
 
 .face{
@@ -59,7 +60,7 @@ h1{
     justify-content: center;
     position: absolute;
     backface-visibility: hidden;
-    transition: all .5s;
+    transition: all 1s;
     transform-style: preserve-3d;
 }
 
@@ -67,11 +68,11 @@ h1{
     transform: rotateY(180deg);
   }
 
-.card:hover .back-face {
+  .virar-tras {
     transform: rotateY(0deg);
   }
 
-.card:hover .front-face {
+  .virar-frente {
     transform: rotateY(-180deg);
   }
 

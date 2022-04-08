@@ -1,4 +1,5 @@
 let quantidadeCartas;
+cartas = [];
 
 function inicio(){
     let sair = 0;
@@ -18,7 +19,6 @@ function comparador() {
 
 function distribuiCartas(){
     cartasMax = [1,1,2,2,3,3,4,4,5,5,6,6,7,7];
-    cartas = [];
     for(let i=0; i<quantidadeCartas; i++){
         cartas.push(cartasMax[i]);
     }
@@ -29,13 +29,55 @@ function distribuiCartas(){
     containerCartas.innerHTML = "";
 
     for(let i=0; i<quantidadeCartas; i++){
-        containerCartas.innerHTML += `<div class="card face"><img src="/resources/images/front.png" alt=""></div>`;
+
+        if(cartas[i] === 1){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/bobrossparrot.gif" alt=""> </div> </div>`  
+        }else if(cartas[i] === 2){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/explodyparrot.gif" alt=""> </div> </div>`  
+        }else if(cartas[i] === 3){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/fiestaparrot.gif" alt=""> </div> </div>`  
+        }else if (cartas[i] === 4){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/metalparrot.gif" alt=""> </div> </div>`  
+        }else if(cartas[i] === 5){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/revertitparrot.gif" alt=""> </div> </div>`  
+        }else if(cartas[i] === 6){
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/tripletsparrot.gif" alt=""> </div> </div>`  
+        }else{
+            containerCartas.innerHTML += `<div class="card" onclick="virar(this)"> <div class="front-face face"> <img src="resources/images/front.png" alt=""> </div> <div class="back-face face"> <img src="resources/images/unicornparrot.gif" alt=""> </div> </div>`  
+        }
     }
 }
 
 function virar(carta){
-    carta.classList.toggle("back-facee");
+    let cartas = document.querySelectorAll(".card");
+    let cartasViradas = document.querySelectorAll(".virar-tras");
+    console.log(cartasViradas);
+    console.log(cartas);
+    
+    let carta1 = "";
+    let carta2 = "";
+
+    if (cartasViradas.length = 0){
+        cartaFrente = carta.querySelector(".front-face");
+        cartaTras = carta.querySelector(".back-face");
+        cartaFrente.classList.toggle("virar-frente");
+        cartaTras.classList.toggle("virar-tras");
+        cartasViradas = document.querySelectorAll(".virar-tras");
+        console.log(cartasViradas);
+    }else{
+        let cartasViradas = document.querySelectorAll(".virar-tras");
+        cartaFrente = carta.querySelector(".front-face");
+        cartaTras = carta.querySelector(".back-face");
+        cartaFrente.classList.toggle("virar-frente");
+        cartaTras.classList.toggle("virar-tras");
+
+
+    }
+
+
 }
 
+ 
+
 inicio();
-//distribuiCartas();
+distribuiCartas();
