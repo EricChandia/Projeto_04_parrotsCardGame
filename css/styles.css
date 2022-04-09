@@ -27,7 +27,7 @@ h1{
 }
 
 .container-cartas{
-    margin-top: 60px;
+    margin-top: 10px;
     width: 80%;
     height: 400px;
     display: flex;
@@ -60,7 +60,7 @@ h1{
     justify-content: center;
     position: absolute;
     backface-visibility: hidden;
-    transition: all 1s;
+    transition: all 0.5s;
     transform-style: preserve-3d;
 }
 
@@ -80,6 +80,30 @@ h1{
     width: 100px;
     height: 100px;
 }
+
+.cardValue{
+    display: none;
+}
+
+
+.caixa-do-relogio {
+    align-self: flex-end;
+    height: 50px;
+    width: 80px;
+    background-color: #f0a202;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.relogio {
+    font-family: "Montserrat", sans-serif;
+    color: #183059;
+    font-size: 20px;
+  }
 
 @media (max-width: 400px) {
     h1{
