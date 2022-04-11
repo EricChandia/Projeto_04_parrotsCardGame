@@ -126,7 +126,7 @@ function compararCartas()
             }else if (reiniciar == "não"){
                 sair = 1;
             }else{
-                alert("Valor inválido!");
+                alert("Digite apenas 'sim' ou 'não'.");
             }
         }
     
@@ -147,3 +147,9 @@ function contar() {
 inicio();
 distribuiCartas();
 contar();
+
+
+
+
+
+
